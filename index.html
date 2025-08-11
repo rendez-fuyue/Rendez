@@ -1,71 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>张三的个人主页</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
         }
-        /*让容器的宽度和高度都充满全屏*/
-        html,body{
-            width: 100%;
-            height: 100%;
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
         }
-        body{
-            background-color: pink;
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background-color: #fff;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid #f0f0f0;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        
+        .title {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #555;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #0077b5;
+        }
+        
+        section {
+            background-color: #fff;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #333;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        
+        .skills {
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-        .heart{
-            width: 200px;
-            height: 200px;
-            background-color: red;
-            position: relative;
-            transform: rotate(45deg);
-            animation: heartbit  1s alternate infinite;
-            box-shadow: 0 0 30px red;
+        
+        .skill {
+            background-color: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
         }
-        .heart::before{
-            content: "";
-            width: 200px;
-            height: 100px;
-            background-color: red;
-            position: absolute;
-            left: 0;
-            top: -99px;
-            border-radius: 100px 100px 0 0;
-            box-shadow: 0 0 30px red;
+        
+        .project {
+            margin-bottom: 20px;
         }
-        .heart::after{
-            content: "";
-            width: 100px;
-            height: 200px;
-            background-color: red;
-            position: absolute;
-            left: -99px;
-            top: 0;
-            border-radius: 100px 0 0 100px;
-            box-shadow: 0 0 30px red;
+        
+        .project h3 {
+            font-size: 1.3em;
+            margin-bottom: 5px;
         }
-
-        @keyframes heartbit {
-            0%{
-                transform:rotate(45deg) scale(0.6);
+        
+        .project p {
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
             }
-            100%{
-                transform: rotate(45deg) scale(1.4);
+            
+            header {
+                padding: 20px 0;
             }
         }
     </style>
 </head>
 <body>
-
-    <div class="heart"></div>
-
+    <div class="container">
+        <header>
+            <img src="profile.jpg" alt="张三的照片" class="profile-img">
+            <h1>张三</h1>
+            <p class="title">前端开发工程师 | 网页设计师</p>
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+                <a href="mailto:your.email@example.com">Email</a>
+            </div>
+        </header>
+        
+        <section id="about">
+            <h2>关于我</h2>
+            <p>我是一名热爱前端开发的专业人士，拥有5年网页设计和开发经验。专注于创建响应式、用户友好的网站和应用。我热衷于学习新技术，并喜欢将创意转化为现实。</p>
+            <p>工作之余，我喜欢摄影、旅行和参加技术交流会。我相信终身学习是保持竞争力的关键。</p>
+        </section>
+        
+        <section id="skills">
+            <h2>技能</h2>
+            <div class="skills">
+                <span class="skill">HTML5</span>
+                <span class="skill">CSS3</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">React</span>
+                <span class="skill">Vue.js</span>
+                <span class="skill">Node.js</span>
+                <span class="skill">Git</span>
+                <span class="skill">UI/UX设计</span>
+                <span class="skill">响应式设计</span>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <h2>项目经验</h2>
+            <div class="project">
+                <h3>电子商务网站</h3>
+                <p>2022年 - 至今</p>
+                <p>使用React和Node.js开发的全功能电子商务平台，支持多种支付方式和实时库存管理。</p>
+            </div>
+            <div class="project">
+                <h3>企业管理系统</h3>
+                <p>2021年 - 2022年</p>
+                <p>基于Vue.js和Spring Boot的内部管理系统，提高了公司各部门的工作效率30%。</p>
+            </div>
+        </section>
+        
+        <section id="education">
+            <h2>教育背景</h2>
+            <div class="project">
+                <h3>某某大学</h3>
+                <p>2015年 - 2019年</p>
+                <p>计算机科学与技术专业，学士学位</p>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2023 张三. 保留所有权利。</p>
+        </footer>
+    </div>
 </body>
 </html>
